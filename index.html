@@ -240,7 +240,7 @@ function sendMessage() {
       });
       */
 
-fetch('questions.json')
+/*fetch('questions.json')
       .then(response => {
         if (!response.ok) {
           throw new Error('Network response was not ok');
@@ -265,7 +265,17 @@ fetch('questions.json')
       .catch(error => {
         document.getElementById('quiz').textContent = 'Failed to load quiz questions.';
         console.error('Fetch error:', error);
-      });
+      }); */
+
+
+  fetch("https://mayank120402.github.io/peparcode/questions.json")
+  .then(response => response.json())
+  .then(data => {
+    console.log("Questions loaded:", data);
+    // यहाँ आप data को HTML में दिखा सकते हैं
+  })
+  .catch(error => console.error("Error loading JSON:", error));
+
       
 </script>
 </body>
